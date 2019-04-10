@@ -1,0 +1,45 @@
+<h1>Pokemon!</h1>
+
+<div class="row">
+  <div class ="col-4">
+    <h2>Gotta Catch them All</h2>
+
+
+  {{#each pokemon}}
+    {{#unless caught}}
+      {{> pokemon/pokemon-block caught=0}}
+    {{/unless}}
+  {{/each}}
+  </div>
+<div class="col-4">
+  <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">    
+  </div>
+  <div class ="col-4">
+<h2>Your Team</h2>
+
+
+  {{#each pokemon}}
+    {{#if caught}}
+      {{> pokemon/pokemon-block caught=1}}
+    {{/if}}
+  {{/each}}
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<h2>Add a Pokemon</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="newpoke">Pokemon Name:</label>
+    <input type="text" id="newpoke" name="name">
+  </div>
+
+  <button type="submit">Add Pokemon</button>
+</form>
